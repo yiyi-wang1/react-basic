@@ -11,7 +11,8 @@ const ReviewList = (props) => {
                             rating={review.rating}
                             body={review.body}
                             created_at={review.created_at}
-                            full_name={review.full_name}
+                            reviewer={review.reviewer}
+                            deleteReview={()=>props.deleteReview(review.id)}
                         />
                 })}
             </div>

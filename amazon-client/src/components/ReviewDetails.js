@@ -1,7 +1,7 @@
 import StarRating from "./StartRating";
 
 export default function ReviewDetails(props) {
-    const { rating, body, created_at, full_name } = props;
+    const { rating, body, created_at, reviewer } = props;
     return (
         <div>
             <small>Rating: </small>
@@ -10,8 +10,9 @@ export default function ReviewDetails(props) {
                 current={rating}
             />
             <p>{body}</p>
-            <p><small>Reviewed At: {created_at.toLocaleString()}</small></p>
-            <p><small>Reviewed By: {full_name}</small></p>
+            {/* <p><small>Reviewed At: {created_at.toLocaleString()}</small></p> */}
+            <p><small>Reviewed By: {reviewer.full_name}</small></p>
+            <button onClick={props.deleteReview }>Delete this review</button>
         </div>
     )
 }
